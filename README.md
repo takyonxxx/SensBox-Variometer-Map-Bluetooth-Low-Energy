@@ -2,7 +2,7 @@ SensBox
 =======
 
 Flytec SensBox Flight Instrument Variometer Map Project
-SensBox Variometer connects to Flytec SensBox and show vario - gps data on map or on data screen.
+This app can connect to Flytec SensBox and show vario - gps data on map or on data screen.
 It works on Android version 4.3 (Bluetooth LE).
 Application supports livetrack24 online logging.
 For using this, please first fill the pilot info, Vehicle Type and livetrack24 login user info from settings page.
