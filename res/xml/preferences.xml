@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+     <PreferenceCategory android:title="PILOT INFORMATION">    
+         <EditTextPreference
+            android:key="pilotname"
+            android:inputType="text"   
+            android:summary="Pilot name for email and sms info"                       
+            android:title="Pilot Name" />  
+        <EditTextPreference
+            android:key="pilotid"
+            android:inputType="number"    
+            android:summary="Competition or wing id"                      
+            android:title="Competition ID" />     
+        <ListPreference android:key="vehicletype"
+              android:title="Vehicle Type"  
+              android:summary="Select your vehicle"              
+              android:entries="@array/vehicletype_level"              
+              android:entryValues="@array/vehicletype_level_value"
+              android:defaultValue="1" />       
+        <EditTextPreference
+            android:key="wingmodel"  
+            android:summary="Enter your wing or vehicle name"                   
+            android:title="Wing Model" />           
+    </PreferenceCategory> 
+    <PreferenceCategory android:title="LIVETRACK24 SETTINGS">
+        <EditTextPreference
+            android:inputType="text"
+            android:key="liveusername"  
+            android:summary="Livetrack24 Username for login"            
+            android:title="Livetrack24 Username" />
+        <EditTextPreference
+            android:inputType="textPassword"
+            android:key="livepassword"   
+            android:summary="Livetrack24 Password for login"            
+            android:title="Livetrack24 Password" />       
+         <CheckBoxPreference
+            android:key="livetrackenabled"
+            android:summary="Enable sending data to Livetrack24"  
+            android:defaultValue="false"
+            android:title="Enable Livetrack24 on Start"/>            
+    </PreferenceCategory>
+    <PreferenceCategory android:title="VARIO SETTINGS" android:key="second_category"> 
+    <CheckBoxPreference
+          android:title="Enable IGC Logging"
+          android:defaultValue="false"
+          android:summary="Igc Record:-> sdcard/Variolog"
+          android:key="checkboxigcrecord" />    
+    <ListPreference
+            android:key="soundfreq"
+            android:title="Lift Sound Frequency"
+            android:summary="Define Lift Sound Frequency Hz"
+            android:defaultValue="2"
+            android:entries="@array/soundfreq"
+            android:entryValues="@array/soundfreqValues" />   
+    <CheckBoxPreference
+	      android:title="Enable Gps track draw"
+	      android:defaultValue="false"
+	      android:summary="Enable Gps track draw for your location"
+	      android:key="checkboxgpstrack" /> 
+    <ListPreference android:key="logtime" android:title="Log Interval"       
+        android:entries="@array/logtime_level" 
+        android:entryValues="@array/logtime_level_value"
+        android:defaultValue="3000" />     
+    <ListPreference android:key="sinkLevel" android:title="Sink Level"       
+        android:entries="@array/sink_level" 
+        android:entryValues="@array/sink_level_value"
+        android:defaultValue="2.5" /> 
+	</PreferenceCategory>	
+</PreferenceScreen>

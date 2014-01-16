@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>   
+  
+    <string name="app_name">Sens Box</string>
+    <string name="ble_not_supported">BLE is not supported</string>
+    <string name="label_data">SensData:</string>
+    <string name="label_device_address">Device address:</string>
+    <string name="label_state">State:</string>
+    <string name="label_services">Services</string>
+    <string name="no_data">No data</string>
+    <string name="connected">Connected</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="title_devices">Sens Box</string>
+    <string name="error_bluetooth_not_supported">Bluetooth not supported.</string>
+    <string name="unknown_device">Unknown device</string>
+    <string name="unknown_characteristic">Unknown characteristic</string>
+    <string name="unknown_service">Unknown service</string>
+    <!-- Menu items -->
+    <string name="menu_back">EXIT</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_exit">EXIT</string>
+    <string name="menu_connect">STOP</string>
+    <string name="menu_sensbox">SENS BOX</string>
+    <string name="menu_send">SEND</string>
+    <string name="menu_igc">IGC FILES</string>    
+    
+  <string name="dfspeed">Spd: 0 Km</string> 
+  <string name="dfalt">Alt: 0 m</string> 
+  <string name="btn_altdec">Dec Alt (-)</string>    
+  <string name="btn_altinc">Inc Alt (+)</string> 
+  <string name="btn_exit">Exit</string> 
+  <string name="dfgalt">GAlt: 0 m</string> 
+  <string name="dfbr">Br : 0°</string> 
+  <string name="dfacc">Acc: 0 m</string> 
+  <string name="dflat">0.000000</string>  
+  <string name="dflon">0.000000</string>  
+  <string name="dfavgvar">0.0 m/s</string>  
+  <string name="dfdtkf">DTkf: 0 Km</string>  
+  <string name="dftrck">Trck: 0</string>  
+   <string name="time">00:00:00</string>  
+   <string name="temp">0 °C</string> 
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_igc"
+          android:title="@string/menu_igc"                   
+          android:showAsAction="ifRoom|withText"/>   
+    <item android:id="@+id/menu_sensbox" android:title="@string/menu_sensbox" android:showAsAction="ifRoom|withText"> 
+     <menu>
+            <item android:id="@+id/menu_sensdata" android:title="Sens Box Data" android:showAsAction="withText" />           
+            <item android:id="@+id/menu_connect" android:title="Disconnect" android:showAsAction="withText"/>                  
+     </menu>   
+    </item> 
+    <item android:id="@+id/main_menu" android:title="Menu" android:showAsAction="ifRoom|withText">      
+        <menu>
+            <item android:id="@+id/menu_settings" android:title="Settings" android:showAsAction="withText" />
+            <item android:id="@+id/menu_mapclear" android:title="Clear Map" android:showAsAction="withText" />
+            <item android:id="@+id/menu_maptopo" android:title="MapType Topo" android:showAsAction="withText" />
+            <item android:id="@+id/menu_mapcity" android:title="MapType City" android:showAsAction="withText" />            
+            <item android:id="@+id/menu_exit" android:title="Exit" android:showAsAction="withText" />
+        </menu>
+    </item>     
+</menu>
