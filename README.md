@@ -1,6 +1,6 @@
 SensBox
 =======
-
+GNU GENERAL PUBLIC LICENSE Version 3
 Flytec SensBox Flight Instrument Variometer Map Project
 This app can connect to Flytec SensBox and show vario - gps data on map or on data screen.
 It works on Android version 4.3 (Bluetooth LE).
