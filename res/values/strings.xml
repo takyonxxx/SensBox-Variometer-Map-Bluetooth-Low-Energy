@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>   
   
-    <string name="app_name">Sens Box</string>
+    <string name="app_name">SensBox Map</string>
     <string name="ble_not_supported">BLE is not supported</string>
     <string name="label_data">SensData:</string>
     <string name="label_device_address">Device address:</string>

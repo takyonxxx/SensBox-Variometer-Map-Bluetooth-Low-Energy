@@ -14,7 +14,8 @@
             <item android:id="@+id/menu_settings" android:title="Settings" android:showAsAction="withText" />
             <item android:id="@+id/menu_mapclear" android:title="Clear Map" android:showAsAction="withText" />
             <item android:id="@+id/menu_maptopo" android:title="MapType Topo" android:showAsAction="withText" />
-            <item android:id="@+id/menu_mapcity" android:title="MapType City" android:showAsAction="withText" />            
+            <item android:id="@+id/menu_mapcity" android:title="MapType City" android:showAsAction="withText" />  
+            <item android:id="@+id/menu_mute" android:title="Mute" android:showAsAction="withText" />           
             <item android:id="@+id/menu_exit" android:title="Exit" android:showAsAction="withText" />
         </menu>
     </item>     

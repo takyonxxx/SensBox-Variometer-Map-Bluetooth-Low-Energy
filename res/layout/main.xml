@@ -5,6 +5,7 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent" > 
   <com.nutiteq.MapView android:id="@+id/mapView" android:layout_width="fill_parent" android:layout_height="fill_parent" />     
+ 
    <RelativeLayout
         android:layout_width="100dp"
         android:layout_height="match_parent"
@@ -49,7 +50,7 @@
             android:layout_marginBottom="1dip"
             android:maxWidth="20dip"
             android:minWidth="20dip"
-            android:padding="2dp" />
+            android:padding="2dp" />    
       </RelativeLayout>
        <RelativeLayout
         android:id="@+id/relativeLayout1"
@@ -169,6 +170,20 @@
             android:textStyle="bold"
 	        android:layout_alignParentRight="true"
 	        android:text="Alt ( - )" />
+	    
+	     <Button
+	        android:id="@+id/exit"
+	        style="?android:attr/buttonStyleSmall"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/altdec"
+	        android:layout_alignLeft="@+id/altdec"
+	        android:textSize="14sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_alignParentRight="true"
+	        android:text="Exit" />	  
+	        
 	</RelativeLayout>
        
   <RelativeLayout
@@ -188,10 +203,7 @@
       android:textColor="#AAAAAA"
       android:textStyle="bold"
       android:textSize="14sp" />
-  </RelativeLayout>
-
-  <!-- Footer aligned to bottom -->
-
+  </RelativeLayout>  
   <RelativeLayout
       android:id="@+id/footer"
       android:layout_width="match_parent"

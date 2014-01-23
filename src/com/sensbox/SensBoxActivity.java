@@ -139,7 +139,7 @@ public class SensBoxActivity extends Activity  {
    ArrayList<MapPos> trackPoints = new ArrayList<MapPos>();
    private static Projection proj=new EPSG3857();
    private float zoomlevel=14,linewidth=0.05f,tiltlevel=0.0f;
-   private Button altinc,altdec;
+   private Button altinc,altdec,exit;
    static PositionWriter liveWriter;
    static String username,password,serverUrl,stime,errorinfo;
    static boolean loginLW=false,error=false,livetrackenabled=false;
@@ -211,6 +211,13 @@ public class SensBoxActivity extends Activity  {
     		
 	   altinc= (Button)findViewById(R.id.altinc);
 	   altdec= (Button) findViewById(R.id.altdec);	
+	   exit= (Button) findViewById(R.id.exit);	
+	   exit.setOnClickListener(new View.OnClickListener() {			
+			@Override
+			public void onClick(View arg0) {									
+				Exit();
+			}
+		});		
 	   altinc.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -467,8 +474,7 @@ public class SensBoxActivity extends Activity  {
 	private void Exit()
 	{
 		if(beeps!=null)
-		{
-			beeps.stop();
+		{			
 			beeps.onDestroy();
 		}
 		if(livetrackenabled && loginLW)
@@ -548,7 +554,23 @@ public class SensBoxActivity extends Activity  {
  	               item.setTitle("Sens Box Data");
             	}            	
             	return true;
-            
+            case R.id.menu_mute:             	
+            	if(item.getTitle().equals("Mute"))
+            	{   
+            		if(beeps!=null)
+					{
+					beeps.stop();	          	   
+	                item.setTitle("Sound On");
+					}
+            	}else
+            	{
+            		if(beeps!=null)
+					{
+        			beeps.start(getBaseContext(),soundtype,sinkalarm);	   
+ 	                item.setTitle("Mute");
+					}
+            	}            	
+            	return true;
             case android.R.id.home:
                 onBackPressed();
                 return true;
