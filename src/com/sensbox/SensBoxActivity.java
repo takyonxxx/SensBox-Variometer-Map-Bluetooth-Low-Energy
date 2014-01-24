@@ -1,10 +1,12 @@
 /*TÜRKAY BİLİYOR   turkaybiliyor@hotmail.com*/
 package com.sensbox;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -197,18 +199,11 @@ public class SensBoxActivity extends Activity  {
 	   header=(RelativeLayout)findViewById(R.id.header); 
 	   footer=(RelativeLayout)findViewById(R.id.footer); 
 	   sview=(ScrollView)findViewById(R.id.scrollableContents); 	  
-	   getActionBar().setDisplayHomeAsUpEnabled(true);
+	   
 	   routemarkerLayer = new MarkerLayer(proj); 
 	   trckmarkerLayer = new MarkerLayer(proj);	   	   
 	   startMap(); 
-	   setScreen();	        
-       if (!bluetoothAdapter.isEnabled()) {
-           final Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-           startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
-           return;
-       }else
-    	   init();
-    		
+	   setScreen();	 
 	   altinc= (Button)findViewById(R.id.altinc);
 	   altdec= (Button) findViewById(R.id.altdec);	
 	   exit= (Button) findViewById(R.id.exit);	
@@ -264,7 +259,13 @@ public class SensBoxActivity extends Activity  {
 	  {				  
 		setLivePos emitPos = new setLivePos();
 		emitPos.execute(3);								 
-	  }		 
+	  }	
+	 if (!bluetoothAdapter.isEnabled()) {
+         final Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+         startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
+         return;
+     }else  if(!isInit())
+  	   		  init();
    }
   
    @Override
@@ -1446,7 +1447,7 @@ private Runnable sensrunnable = new Runnable() {
 	 public startSensBox(Context context) 
 		{				 
 		     mProgressDialog = new ProgressDialog(context);
-		     mProgressDialog.setMessage("Connecting to SensBox..Please Wait");		     		    	
+		     mProgressDialog.setMessage("Connecting to SensBox ...");	     		    	
 		}
 	 @Override
 	    protected void onPreExecute() {
@@ -1475,9 +1476,26 @@ private Runnable sensrunnable = new Runnable() {
 	    		 Toast.makeText(getApplicationContext(), "SensBox Connected", Toast.LENGTH_LONG).show();
 	    		 connetItem.setTitle("Disconnect");
 	    	} else
-	    	{		 
-	    		 Toast.makeText(getApplicationContext(), "SensBox Not Found!", Toast.LENGTH_LONG).show();
-	    		 connetItem.setTitle("Connect");
+	    	{	 
+	    		 connetItem.setTitle("Connect");	    		 	
+	    		 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(SensBoxActivity.this);
+		         alertDialogBuilder
+		                 .setMessage("SensBox Not Found!")
+		                 .setCancelable(true)
+		                 .setPositiveButton("Try Again",
+		                         new DialogInterface.OnClickListener() {
+		                             public void onClick(DialogInterface dialog,int id) {		
+		                     				init();
+		                     				return;
+		                             }
+		                         })	
+		                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+		                 public void onClick(DialogInterface dialog, int id) {	
+		                	 return;
+		                 }
+	             });
+		         AlertDialog alert = alertDialogBuilder.create();
+		         alert.show();  
 	    	}
 	    }
  }	 
