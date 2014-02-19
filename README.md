@@ -17,4 +17,4 @@ http://flytec.com/SensBox.html
 Google Store:
 https://play.google.com/store/apps/details?id=com.sensbox
 
-GNU GENERAL PUBLIC LICENSE Version 3
+LICENSE GNU GENERAL PUBLIC LICENSE Version 3
